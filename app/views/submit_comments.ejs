@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <a href="/">Index</a>	
+        <form action="/createComment" method="post">
+            <h1> Hello <%= student.firstName %> <%= student.lastName %> </h1>
+            <h2> Submit a comment</h2>
+            <div class="container"> 
+                <label>Course Code: </label>
+                <input type="text" class="fields" name="courseCode" /> 
+                <label>Course Name: </label>
+                <input type="text" class="fields" name="courseName" />
+                <label>Program: </label>
+                <input type="text" class="fields" name="program" />
+                <label>Semester: </label>
+                <input type="text" class="fields" name="semester" />
+                <label>Comment: </label>
+                <input type="text" class="fields" name="comment" />
+                <button type="submit">Submit Comment</button>
+            </div>
+        </form>
+    </body>
+</html>
