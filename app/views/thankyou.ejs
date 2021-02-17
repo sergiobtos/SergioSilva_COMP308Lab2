@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+      		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      		rel="stylesheet"
+      		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      		crossorigin="anonymous"
+    />
+    <link rel= "stylesheet" href="/css/thanks.css" />
+    <title>"<%= title %>"</title>
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <h3 class="float-md-start"></h3>
+      </header>
+      <main >
+        <h1>Thank you <strong><%= firstName %> </strong></h1>
+        <p class="lead">We apreciate your comments: </p>
+        <p class="lead"><%= comment %></p>
+        <a class="btn btn-lg btn-secondary fw-bold border-white bg-white" href="/">Home Page</a> 
+      </main>
+      <footer class="mt-auto text-white-50">
+        <p>©2021 Copyright: Sergio Silva 301011342</p>
+      </footer>	   
+    </div>   	 
+  </body>
+</html>

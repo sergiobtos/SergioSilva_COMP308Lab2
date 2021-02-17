@@ -34,7 +34,7 @@ exports.create = function( req, res, next){
     });
 };
 
-exports.findById = function (req, res, next) {
+exports.findById = function (req, res) {
     var session = req.session;
     session.email = req.body.email;
 	Student.findOne({

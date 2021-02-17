@@ -17,15 +17,4 @@ const CommentSchema = new Schema({
     }
 });
 
-/*UserSchema.statics.findAllByStudentId = function(id, callback) {
-	// Use the 'findOne' method to retrieve a user document
-	this.findOne({
-		student: id
-	}, callback);
-};*/
-/*StudentSchema.set('toJSON', {
-	setters: true,
-	virtuals: true
-});*/
-
 mongoose.model('Comment', CommentSchema);

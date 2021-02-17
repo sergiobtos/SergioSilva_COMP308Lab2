@@ -10,7 +10,5 @@ module.exports = function (app){
 
     app.get('/signup', student.signUpView);
     app.post('/signup', student.create);
-
-    //app.get('/comments', comment.render);
     
 };
