@@ -1,6 +1,8 @@
 const Student = require('mongoose').model('Student');
 
 exports.render = function ( req, res){
+    var session = req.session;
+    console.log(JSON.stringify(session));
     res.render('index', {
         title: 'Lab3 - MongoDB',
     });
@@ -20,9 +22,8 @@ exports.signUpView = function ( req, res){
 };
 
 exports.create = function( req, res, next){
-    console.log(JSON.stringify(req.body));
+   // console.log(JSON.stringify(req.body));
     const student = new Student(req.body);
-    console.log(student);
     student.save((err) =>{
         if(err){
         return next(err);
@@ -52,19 +53,18 @@ exports.findById = function (req, res) {
         }
     })
 };
-/*
-exports.findAll = function (req, res, next) {
+
+exports.getAllStudents = function (req, res, next) {
     // Use the 'User' static 'find' method to retrieve the list of users
-    User.find({}, (err, students) => {
+    Student.find({}, (err, students) => {
         if (err) {
             // Call the next middleware with an error message
             return next(err);
         } else {
             // Use the 'response' object to send a JSON response
-            res.render('listall', {
-                title: 'List All Users',
-                students: students
+            res.render('students', {
+                students: students,
             });
         }
     });
-};*/
+};

@@ -1,26 +1,102 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+      		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      		rel="stylesheet"
+      		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      		crossorigin="anonymous"
+    	/>
+        <link rel="stylesheet" href="css/submitComment.css">
+        <title>Submmit your comment</title>
     </head>
-    <body>
-        <a href="/">Index</a>	
-        <form action="/createComment" method="post">
-            <h1> Hello <%= student.firstName %> <%= student.lastName %> </h1>
-            <h2> Submit a comment</h2>
-            <div class="container"> 
-                <label>Course Code: </label>
-                <input type="text" class="fields" name="courseCode" /> 
-                <label>Course Name: </label>
-                <input type="text" class="fields" name="courseName" />
-                <label>Program: </label>
-                <input type="text" class="fields" name="program" />
-                <label>Semester: </label>
-                <input type="text" class="fields" name="semester" />
-                <label>Comment: </label>
-                <input type="text" class="fields" name="comment" />
-                <button type="submit">Submit Comment</button>
+    <body>    
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Lab 3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/signin">Sign In</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/signup">Sign Up</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Display</a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                    <li><a class="dropdown-item" href="/students">All Students</a></li>
+                    <li><a class="dropdown-item" href="/comments">Comments by Student</a></li>
+                  </ul>
+                </li>
+              </ul>
             </div>
-        </form>
-    </body>
+          </div>
+        </nav>
+      <main class="container">
+        <div class="form-center">
+          <img src="/images/logo.png" alt="logo" />
+          <form action="/createComment" method="post">
+               <h1> Hello <%= student.firstName %> <%= student.lastName %> </h1>
+               <h2> Submit a comment</h2>
+               <div class="form-horizontal"> 
+                 <div class="form-group">
+                   <label class="col-sm-2 control-label">Course Code: </label>
+                   <div class="col-sm-10">
+                     <input type="text" class="form-control" name="courseCode" />
+                   </div>  
+                 </div>
+                 <div class="form-group">
+                   <label class="col-sm-2 control-label">Course Name: </label>
+                   <div class="col-sm-10">
+                     <input type="text" class="form-control" name="courseName" />
+                   </div>
+                 </div>
+                 <div class="form-group">
+                   <label class="col-sm-2 control-label">Program: </label>
+                   <div class="col-sm-10">
+                     <input type="text" class="form-control" name="program" />
+                   </div>
+                 </div>
+                 <div class="form-group">
+                   <label class="col-sm-2 control-label">Semester: </label>
+                   <div class="col-sm-10">
+                     <input type="text" class="form-control" name="semester" />
+                   </div>
+                 </div> 
+                 <div class="form-group">
+                   <label class="col-sm-2 control-label">Comment: </label>
+                   <div class="col-sm-10">
+                     <textarea type="text" class="form-control" rows="4" name="comment"></textarea>
+                   </div>
+                 </div>
+                 <div class="form-group">
+                   <div class="col-sm-10 col-sm-offset-2">
+                     <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
+                   </div>
+                 </div>    
+               </div>
+           </form> 
+        </div>
+      </main> 
+        <footer id="footer" class="bg-light text-center text-lg-start">
+              <!-- Copyright -->
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2021 Copyright: Sergio Silva 301011342    
+              </div>
+              <!-- Copyright -->
+        </footer>
+      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+          
+      </body> 
 </html>

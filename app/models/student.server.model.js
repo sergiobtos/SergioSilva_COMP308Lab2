@@ -6,6 +6,8 @@ const Schema = mongoose.Schema;
 const StudentSchema = new Schema({
 	firstName: String,
 	lastName: String,
+	age: Number,
+	phoneNumber: Number,
 	email: {
 		type: String,
 		// Set an email index
@@ -23,19 +25,19 @@ const StudentSchema = new Schema({
 		]
 	}
 });
-/*
-UserSchema.statics.findStudentByEmail = function(email, callback) {
+
+StudentSchema.statics.findStudentByEmail = function(email, callback) {
 	// Use the 'findOne' method to retrieve a user document
 	this.findOne({
 		email: email
 	}, callback);
-};*/
+};
 
 // Configure the 'UserSchema' to use getters and virtuals when transforming to JSON
-/*StudentSchema.set('toJSON', {
-	setters: true,
+StudentSchema.set('toJSON', {
+	getters: true,
 	virtuals: true
-});*/
+});
 
 // Create the 'User' model out of the 'UserSchema'
 mongoose.model('Student', StudentSchema);

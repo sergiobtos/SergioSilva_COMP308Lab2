@@ -5,4 +5,8 @@ module.exports = function (app){
 
     app.post("/createComment", comment.createComment);
 
+    app.get("/comments", comment.display);
+
+    
+
 };

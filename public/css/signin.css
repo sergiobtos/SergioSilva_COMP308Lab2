@@ -1,0 +1,24 @@
+body {
+    padding-top: 5rem;
+  }
+
+html, body{
+    height: 100%;
+}
+
+.container{
+    min-height: 100%;
+}
+
+#content-wrap{
+   overflow: auto; 
+   padding-bottom: 50px;
+}
+
+#footer{
+    background-color: aliceblue;
+    position: relative;
+    height: 50px;
+    margin-top: -50px;
+    clear: both;
+}

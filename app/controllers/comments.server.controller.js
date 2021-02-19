@@ -32,46 +32,29 @@ exports.createComment = function(req, res, next){
     });  
 };
 
-
-
-/*exports.display = function(req,res){
-    var email = req.session.email;
+exports.display = function(req,res){
+    var email = req.session.student.email;
+    //var email = 'sergiobtos@hotmail.com';
     var studentId;
-    Student.findStudentByEmail(email, function(err, student) {
-        if(err){
-            return getErrorMessage(err);
-        }
-        studentId = student._id;
+    Student.findOne({email: email}, function(err, student){
+        if(err){console.log(err);}
+        else{studentId = student._id;}
     }).then( () => {
-        Comment.findAllByStudentId(studentId, function (err, allComments){
-            if(err){
-                return getErrorMessage(err);
-            }
-            res.render("comments", {
-                comments: allComments,
-                email: email,
-            });
-            next();
+        Comment.find({student: studentId}, function(err, allComments){
+            if(err){console.log(err)}
+            res.render("comments", {comments: allComments,email: email,});
         });
     });
 };
 
-exports.userByEmail = function ( req, res, next){
-    var email = req.session.email;
-    Student.
-        findOne({email: email}, (err, student) => {
-            if(err) {return getErrorMessage(err);}
-            req.id = student._id;
-            console.log(req.id);
-        }).then (function (){
-            Comment.find({
-                student: req.id
-            }, (err, comments) =>{
-                if(err) { return getErrorMessage(err);}
-                res.render('comments', {
-                    comments : comments,
-                    email : email
-                });
-            });
-        });
-};*/
+exports.logout = function (req, res) {
+    //destroy the session and redirect user to root path
+    req.session.destroy(function (err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.redirect('/');
+        }
+    });   
+};
