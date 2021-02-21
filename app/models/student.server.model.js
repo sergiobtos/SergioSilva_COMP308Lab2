@@ -26,7 +26,7 @@ const StudentSchema = new Schema({
 	}
 });
 
-StudentSchema.statics.findStudentByEmail = function(email, callback) {
+/*StudentSchema.statics.findStudentByEmail = function(email, callback) {
 	// Use the 'findOne' method to retrieve a user document
 	this.findOne({
 		email: email
@@ -37,7 +37,7 @@ StudentSchema.statics.findStudentByEmail = function(email, callback) {
 StudentSchema.set('toJSON', {
 	getters: true,
 	virtuals: true
-});
+});*/
 
 // Create the 'User' model out of the 'UserSchema'
 mongoose.model('Student', StudentSchema);
