@@ -34,7 +34,7 @@ exports.createComment = function(req, res, next){
 
 exports.display = function(req,res){
     var email = req.session.student.email;
-    //var email = 'sergiobtos@hotmail.com';
+
     var studentId;
     Student.findOne({email: email}, function(err, student){
         if(err){console.log(err);}
